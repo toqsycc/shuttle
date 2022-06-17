@@ -12,3 +12,15 @@ void Display::print(uint8_t *array, uint8_t length)
 {
     lcd->write(array, length);
 }
+
+void Display::print(String str)
+{
+    lcd->print(str);
+}
+
+void Display::move(uint8_t x, uint8_t y)
+{
+    if (x >= 0 && x < displayWidth && y >= 0 && y < displayHeigth)
+        lcd->setCursor(x, y);
+    else return;
+}

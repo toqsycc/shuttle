@@ -1,12 +1,7 @@
 #include <Arduino.h>
 #include <LiquidCrystal.h>
 
-#define LCD_RS 8
-#define LCD_EN 9
-#define LCD_D4 14
-#define LCD_D5 15
-#define LCD_D6 16
-#define LCD_D7 17
+#include "pinout.hpp"
 
 class Display
 {
@@ -18,4 +13,6 @@ public:
     Display(uint8_t width, uint8_t heigth);
     ~Display();
     void print(uint8_t *array, uint8_t length);
+    void print(String str);
+    void move(uint8_t x, uint8_t y);
 };
