@@ -1,12 +1,10 @@
-void setup()
-{
-    pinMode(13, OUTPUT);
-}
+#include "lib/shuttle.hpp"
 
-void loop()
+int main()
 {
-    digitalWrite(13, HIGH);
-    delay(500);
-    digitalWrite(13, LOW);
-    delay(500);
+    init();
+    
+    Shuttle *shuttle = new Shuttle();
+
+    return 0;
 }
