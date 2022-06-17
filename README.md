@@ -13,6 +13,8 @@ aboba
 - MPU6050 Accelerometer
 - WINSTAR WH1602 LCD
 - HC-05 Bluetooth Module
+- HW-504 Joystick
+- Relay Module 5V 10A
 - TXS0108 Logic Converter
 - SX1308 DC-DC Converter
 ###### Features

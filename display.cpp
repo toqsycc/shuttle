@@ -24,3 +24,8 @@ void Display::move(uint8_t x, uint8_t y)
         lcd->setCursor(x, y);
     else return;
 }
+
+void Display::clear()
+{
+    lcd->clear();
+}

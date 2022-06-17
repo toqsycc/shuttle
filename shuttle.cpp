@@ -2,7 +2,7 @@
 #include "lib/messages.hpp"
 
 #include <MPU6050.h>
-
+bool menu(false);
 Shuttle::Shuttle()
 {
     // Инициализация дисплея:
@@ -29,10 +29,28 @@ Shuttle::Shuttle()
     dsp->print(mdAuto, 4);
     for(;;)
     {
-        dsp->move(0, 1);
-        dsp->print(String(aht.GetTemperature()));
-        dsp->move(7, 1);
-        dsp->print(String(mpu.getRotationZ()));
+        if (analogRead(STICK_BTN) < 32 && !menu)
+        {
+            menu = true;
+        }
+        if (menu)
+        {
+            dsp->clear();
+            dsp->move(0, 0);
+            dsp->print("Settings");
+            dsp->move(0, 1);
+            dsp->print(String(analogRead(STICK_X)));
+            dsp->move(7, 1);
+            dsp->print(String(analogRead(STICK_Y)));
+        }
+        else
+        {
+            dsp->move(0, 1);
+            dsp->print(String(aht.GetTemperature()));
+            dsp->move(7, 1);
+            dsp->print(String(mpu.getRotationZ()));
+        }
+        
         delay(150);
     }
 }
