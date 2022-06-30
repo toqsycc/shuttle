@@ -1,6 +1,8 @@
 # Arduino-based Shuttle
+###### Overview
+work in progress
 ###### Purpose
-aboba
+work in progress
 ###### Hardware
 - Arduino Mega 2560 R3
 - DBH-12V Dual DC Motor Drive
@@ -18,4 +20,4 @@ aboba
 - TXS0108 Logic Converter
 - SX1308 DC-DC Converter
 ###### Features
-aboba
+work in progress
