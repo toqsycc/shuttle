@@ -1,10 +1,10 @@
 # Arduino-based Shuttle
 ![Assembly overview](/cad/screenshot.png)
-###### Overview
+#### Overview
 work in progress
 ###### Purpose
 work in progress
-###### Hardware
+#### Hardware
 - Arduino Mega 2560 R3
 - DBH-12V Dual DC Motor Drive
 - 4x TT Motors
@@ -20,5 +20,5 @@ work in progress
 - Relay Module 5V 10A
 - TXS0108 Logic Converter
 - SX1308 DC-DC Converter
-###### Features
+#### Features
 work in progress
