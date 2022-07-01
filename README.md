@@ -1,4 +1,5 @@
 # Arduino-based Shuttle
+![Assembly overview](/cad/screenshot.png)
 ###### Overview
 work in progress
 ###### Purpose
