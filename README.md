@@ -2,7 +2,8 @@
 ![Общий вид сборки](/cad/screenshot.png)
 ![Прогресс сборки, 1](/cad/progress_1.jpg)
 ![Прогресс сборки, 2](/cad/progress_2.jpg)
-![Тест визуализации выхлопа](/cad/test_1.webm)
+![Тест визуализации выхлопа](https://user-images.githubusercontent.com/38332987/180097915-9d333f5f-7daf-4d71-86c8-8cc3db9baa0e.webm)
+
 ## История версий
 - [x] v0.08 - **Текущая версия**  
 Внесённые изменения:
