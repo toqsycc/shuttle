@@ -17,6 +17,14 @@
 #define REAR_RGB_EXHST_B    8
 #define REAR_RGB_EXHST_G    9
 #define REAR_RGB_EXHST_R    10
+#define SERVO_PIN
+#define TOUCH_SCLK
+#define TOUCH_SDAT
+#define BLUETOOTH_TX
+#define BLUETOOTH_RX
+#define LED_LENGTH          8
+#define LED_ARRAY_L_PIN
+#define LED_ARRAY_R_PIN
 #define LCD_RS              8   // Контакт RS ЖК-дисплея
 #define LCD_EN              9   // Контакт EN ЖК-дисплея
 #define LCD_D4              14  // Контакт D4 ЖК-дисплея
