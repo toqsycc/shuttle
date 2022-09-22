@@ -1,9 +1,8 @@
-#include "lib/shuttle.hpp"
+#include <shuttle.hpp>
 
 int main()
 {
     init();
-    analogWrite(7, 128);
     
     Shuttle *shuttle = new Shuttle();
     

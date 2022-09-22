@@ -7,6 +7,7 @@
  */
 
 #include <Arduino.h>
+#include <HardwareSerial.h>
 
 //  Секция логики устройства
 #include <rgbd.hpp>             // Управление RGB светодиодами
@@ -14,7 +15,8 @@
 #include <lcd.hpp>              // Управление ЖК-дисплеем
 #include <ps2.hpp>              // Управление PS2 тачпадом
 #include <dbh.hpp>              // Управление драйвером двигателей
-#include <iic.hpp>              // Управление датчиками температуры и гироскопа
+#include <accelerometer.hpp>    // Управление датчиком-акселерометром
+#include <temperature.hpp>      // Управление датчиком температуры
 #include <ultrasonic.hpp>       // Управление ультразвуковыми датчиками дистанции
 #include <infrared.hpp>         // Управление инфракрасными датчиками линии
 #include <colors.hpp>           // Библиотека HSL оттенков
@@ -50,8 +52,8 @@ private:
     byte                    relayPin;
     byte                    currentState;
     byte                    hasInvertedLogic;
-    const byte              __disable(0x00);
-    const byte              __enable(0xFF);
+    const byte              __disable = 0x00;
+    const byte              __enable = 0xFF;
 public:
     Relay(byte pin, byte hasInvertedLogic = 0x00) :
         relayPin(pin),
@@ -67,7 +69,7 @@ public:
         if (currentState == __enable) return;
         else
         {
-            currentState == __enable;
+            currentState = __enable;
             if (hasInvertedLogic)   digitalWrite(relayPin, ~__enable);
             else                    digitalWrite(relayPin, __enable);
         }
@@ -77,7 +79,7 @@ public:
         if (currentState == __disable) return;
         else
         {
-            currentState == __disable;
+            currentState = __disable;
             if (hasInvertedLogic)   digitalWrite(relayPin, ~__disable);
             else                    digitalWrite(relayPin, __disable);
         }
@@ -167,22 +169,22 @@ private:
     byte                    *prevCommandBuffer;
 
     //  Константы для вычислений
-    const double            voltageStep(0.004);
+    const double            voltageStep = 0.004;
 
     //  Счетчики
-    unsigned long           lastState(2000l);
-    unsigned long           lastReading(0l);
-    unsigned long           lastCommand(0l);
+    unsigned long           lastState = 2000l;
+    unsigned long           lastReading = 0l;
+    unsigned long           lastCommand = 0l;
 
     //  Флаги состояний устройства
     byte                    currentState;
 
     //  Константы флагов состояний устройства
-    const byte              __deviceLaunching(0x00);
-    const byte              __deviceConfiguring(0x01);
-    const byte              __deviceAutomoving(0x02);
-    const byte              __deviceDriving(0x04);
-    const byte              __deviceHardfault(0xFF);
+    const byte              __deviceLaunching = 0x00;
+    const byte              __deviceConfiguring = 0x01;
+    const byte              __deviceAutomoving = 0x02;
+    const byte              __deviceDriving = 0x04;
+    const byte              __deviceHardfault = 0xFF;
 
 public:
     Shuttle();
