@@ -18,5 +18,5 @@ public:
     RGBDiode(byte*);
     RGBDiode(byte*, byte*);
     ~RGBDiode();
-    void SwitchColor(byte*);
+    void switchColor(byte*);
 };

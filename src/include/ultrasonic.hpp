@@ -8,5 +8,16 @@
 
 class UltrasonicSensor
 {
-
+private:
+    const byte                  triggerPin,
+                                echoPin;
+    unsigned long               distance,
+                                __triggeredTimestamp,
+                                __receivedTimestamp;
+    void initiateTrigger();
+    void awaitForEcho();
+    void onEchoEvent();
+public:
+    UltrasonicSensor(const byte, const byte);
+    inline unsigned long getDistance(){ return distance; }
 };

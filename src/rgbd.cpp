@@ -19,7 +19,7 @@ RGBDiode::RGBDiode(byte *pins, byte *clr)
   this->InitializeBus();
 }
 
-void RGBDiode::SwitchColor(byte *clr)
+void RGBDiode::switchColor(byte *clr)
 {
   this->channels = clr;
   for (byte i(0); i < 3; i++)

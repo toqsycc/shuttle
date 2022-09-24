@@ -14,9 +14,14 @@ Shuttle::Shuttle()
     enginesPower = new Relay(RELAY_CONTROL_PIN, true);
     steeringWheel = new Servo();
 
+    //  Инициализация датчиков
+    sonicLeft = new UltrasonicSensor(SONIC_L_TRIG, SONIC_L_ECHO);
+    sonicRight = new UltrasonicSensor(SONIC_R_TRIG, SONIC_R_ECHO);
+
     Serial1.begin(BLUETOOTH_BAUD);
 
     steeringWheel->attach(SERVO_CONTROL_PIN);
+    steeringWheel->write(90);
 
     //  Основной цикл работы устройства
     for(;;)
@@ -33,7 +38,7 @@ Shuttle::Shuttle()
             commandBuffer[Peripheral] = Serial1.read();
 
             if ((commandBuffer[Angle] <= 0xB4) && 
-                ((commandBuffer[Direction] <= 0xF5) && (commandBuffer[Direction] >= 0xF1))
+                ((commandBuffer[Direction] <= 0xF5) && (commandBuffer[Direction] >= 0xF1)))
             {
                 //  Обработка команд движения
                 if (commandBuffer[Direction] <= 0xF3)

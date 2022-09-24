@@ -29,6 +29,7 @@
 #define BLUETOOTH_BAUD      115200
 #define SERVO_FORWARD_ANGLE 90
 
+// TODO: Записать пины управления двигателем, АЦП батарей и двигателей, исправить TRIG и ECHO на действительные значения
 #define EXHAUST_LIGHT_B     2   // Цветные ШИМ-каналы шины выхлопа
 #define EXHAUST_LIGHT_G     3   //
 #define EXHAUST_LIGHT_R     4   //
@@ -44,6 +45,10 @@
 #define STRIP_DATA_LEFT     51  // Пин данных левой светодиодной ленты
 #define PS2_CLOCK_PIN       53  // Пин тактирования тачпада
 #define PS2_DATA_PIN        52  // Пин данных тачпада
+#define SONIC_L_TRIG        88  // Пин сигнала левого УЗ-датчика
+#define SONIC_L_ECHO        89  // Пин отклика левого УЗ-датчика
+#define SONIC_R_TRIG        98  // Пин сигнала правого УЗ-датчика
+#define SONIC_R_ECHO        99  // Пин отклика правого УЗ-датчика
 
 //  Секция вспомогательных классов логики и периферии
 class Relay
@@ -186,6 +191,11 @@ private:
     const byte              __deviceDriving = 0x04;
     const byte              __deviceHardfault = 0xFF;
 
+    //  Показатели АЦП
+    unsigned short          engineBatteryValue,
+                            deviceBatteryValue,
+                            engineFeedbackLeft,
+                            engineFeedbackRight;
 public:
     Shuttle();
 
