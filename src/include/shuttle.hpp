@@ -23,32 +23,12 @@
 #include <ru_strings.hpp>       // Библиотека строк на кириллице
 
 //  Секция драйверов устройства
+#include <pinout.hpp>           // Распиновка материнской платы
 #include <Servo.h>
 
 //  Секция внешних констант
 #define BLUETOOTH_BAUD      115200
 #define SERVO_FORWARD_ANGLE 90
-
-// TODO: Записать пины управления двигателем, АЦП батарей и двигателей, исправить TRIG и ECHO на действительные значения
-#define EXHAUST_LIGHT_B     2   // Цветные ШИМ-каналы шины выхлопа
-#define EXHAUST_LIGHT_G     3   //
-#define EXHAUST_LIGHT_R     4   //
-#define REAR_R_LIGHT_B      8   // Цветные ШИМ-каналы шины правой задней фары
-#define REAR_R_LIGHT_G      9   //
-#define REAR_R_LIGHT_R      10  //
-#define REAR_L_LIGHT_B      11  // Цветные ШИМ-каналы шины левой задней фары
-#define REAR_L_LIGHT_G      12  //
-#define REAR_L_LIGHT_R      13  //
-#define SERVO_CONTROL_PIN   22  // Пин управления сервоприводом
-#define RELAY_CONTROL_PIN   23  // Пин управления реле
-#define STRIP_DATA_RIGHT    50  // Пин данных правой светодиодной ленты
-#define STRIP_DATA_LEFT     51  // Пин данных левой светодиодной ленты
-#define PS2_CLOCK_PIN       53  // Пин тактирования тачпада
-#define PS2_DATA_PIN        52  // Пин данных тачпада
-#define SONIC_L_TRIG        88  // Пин сигнала левого УЗ-датчика
-#define SONIC_L_ECHO        89  // Пин отклика левого УЗ-датчика
-#define SONIC_R_TRIG        98  // Пин сигнала правого УЗ-датчика
-#define SONIC_R_ECHO        99  // Пин отклика правого УЗ-датчика
 
 //  Секция вспомогательных классов логики и периферии
 class Relay

@@ -13,6 +13,7 @@ Shuttle::Shuttle()
     //  Инициализация периферии
     enginesPower = new Relay(RELAY_CONTROL_PIN, true);
     steeringWheel = new Servo();
+    engines = new EngineDriver();
 
     //  Инициализация датчиков
     sonicLeft = new UltrasonicSensor(SONIC_L_TRIG, SONIC_L_ECHO);
@@ -65,8 +66,8 @@ Shuttle::Shuttle()
                         break;
                     }
 
-                    if (prevCommandBuffer[Speed] != commandBuffer[Speed])
-                        engines->setSpeed(commandBuffer[Speed]);
+                    /*if (prevCommandBuffer[Speed] != commandBuffer[Speed])
+                        engines->setSpeed(commandBuffer[Speed]);*/
                     if (prevCommandBuffer[Angle] != commandBuffer[Angle])
                         steeringWheel->write(commandBuffer[Angle]);
                 }
